@@ -7,6 +7,7 @@ module.exports = {
     if (!guildData || !guildData.welcomeChannel) return;
     const channel = member.guild.channels.cache.get(guildData.welcomeChannel);
     if (!channel) return;
+
     channel.send(guildData.welcomeMessage.replace('{user}', `<@${member.id}>`));
   },
 };
